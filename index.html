@@ -1,0 +1,25 @@
+<!-- src/main/resources/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Check-Out</title>
+</head>
+<body>
+    <h1>Welcome to the Library</h1>
+    <p>Books:</p>
+    <ul>
+        <li th:each="book : ${books}">
+            <span th:text="${book.title}"></span> - <span th:text="${book.author}"></span>
+            <form th:action="@{/checkout}" method="post">
+                <input type="hidden" th:name="bookId" th:value="${book.id}">
+                <button th:if="${!book.checkedOut}" type="submit">Checkout</button>
+                <span th:if="${book.checkedOut}">Checked Out</span>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>
+
