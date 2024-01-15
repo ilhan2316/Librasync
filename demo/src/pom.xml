@@ -1,0 +1,13 @@
+<!-- Before -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+
+<!-- After (Updated version to address the CVE) -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>5.2.15.RELEASE</version>
+</dependency>
